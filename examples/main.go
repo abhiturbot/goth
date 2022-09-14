@@ -47,6 +47,7 @@ import (
 	"github.com/markbates/goth/providers/onedrive"
 	"github.com/markbates/goth/providers/openidConnect"
 	"github.com/markbates/goth/providers/paypal"
+	"github.com/markbates/goth/providers/reddit"
 	"github.com/markbates/goth/providers/salesforce"
 	"github.com/markbates/goth/providers/seatalk"
 	"github.com/markbates/goth/providers/shopify"
@@ -139,6 +140,7 @@ func main() {
 		naver.New(os.Getenv("NAVER_KEY"), os.Getenv("NAVER_SECRET"), "http://localhost:3000/auth/naver/callback"),
 		yandex.New(os.Getenv("YANDEX_KEY"), os.Getenv("YANDEX_SECRET"), "http://localhost:3000/auth/yandex/callback"),
 		nextcloud.NewCustomisedDNS(os.Getenv("NEXTCLOUD_KEY"), os.Getenv("NEXTCLOUD_SECRET"), "http://localhost:3000/auth/nextcloud/callback", os.Getenv("NEXTCLOUD_URL")),
+		reddit.New(os.Getenv("REDDIT_KEY"), os.Getenv("REDDIT_SECRET"), "http://localhost:3000/auth/reddit/callback", os.Getenv("REDDIT_USER_AGENT"), "identity"),
 		gitea.New(os.Getenv("GITEA_KEY"), os.Getenv("GITEA_SECRET"), "http://localhost:3000/auth/gitea/callback"),
 		shopify.New(os.Getenv("SHOPIFY_KEY"), os.Getenv("SHOPIFY_SECRET"), "http://localhost:3000/auth/shopify/callback", shopify.ScopeReadCustomers, shopify.ScopeReadOrders),
 		apple.New(os.Getenv("APPLE_KEY"), os.Getenv("APPLE_SECRET"), "http://localhost:3000/auth/apple/callback", nil, apple.ScopeName, apple.ScopeEmail),
@@ -212,6 +214,7 @@ func main() {
 	m["nextcloud"] = "NextCloud"
 	m["seatalk"] = "SeaTalk"
 	m["apple"] = "Apple"
+	m["reddit"] = "Reddit"
 	m["strava"] = "Strava"
 	m["okta"] = "Okta"
 	m["mastodon"] = "Mastodon"
