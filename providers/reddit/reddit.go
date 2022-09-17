@@ -15,7 +15,7 @@ import (
 )
 
 const (
-	authURL      string = "https://www.reddit.com/api/v1/authorize"
+	authURL      string = "https://www.reddit.com/api/v1/authorize?duration=permanent"
 	tokenURL     string = "https://www.reddit.com/api/v1/access_token"
 	endpointUser string = "https://oauth.reddit.com/api/v1/me"
 )
